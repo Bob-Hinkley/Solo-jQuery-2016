@@ -5,43 +5,26 @@ var blue = 0;
 
 $(document).ready(function() {
 
-$('.color-button').on('click', function() {
-  if($(this).data('color')) {
-    console.log($(this));
-    $('.container').append('<div class="color-cube" style="background-color: ' +  + ';"></div>')
-  }
-  // } else if  {
-  //   //if 'yellow' button is clicked
-  // } else if  {
-  //   //if 'green' button is clicked
-  // } else {
-  //   //if 'blue' button is clicked
-  // }
-});
+  //click event tracking which button was clicked
+  $('.color-button').on('click', function() {
+    var color = $(this).data('color');
+    console.log($(this).data('color'));
+    $('.container').append('<div class="color-cube ' + color + '"></div>')
 
-
-// Figure out logic for which button was clicked //Could be added to click event up top
-// function tracker () {
-//   if ('red click') {
-//     red++;
-//     $('#red').append('<p>' + red + '</p>')
-//   } else if ('yellow click') {
-//     yellow++;
-//     $('#yellow').append('<p>' + yellow + '</p>')
-//   } else if ('green click') {
-//     green++;
-//     $('#green').append('<p>' + green + '</p>')
-//   } else ('blue clicked') {
-//     blue++
-//     $('#blue').append('<p>' + blue + '</p>')
-//   };
-// };
-
-
-
-
-
-
-
-
+    //If else statement adding colors to counter at the top
+    // function tracker () {
+    if ($(this).data('color')=='red') {
+      red++;
+      $('#red').text(red)
+    } else if ($(this).data('color')=='yellow') {
+      yellow++;
+      $('#yellow').text(yellow)
+    } else if ($(this).data('color')=='green') {
+      green++;
+      $('#green').text(green)
+    } else { ($(this).data('color')=='blue')
+    blue++;
+    $('#blue').text(blue)
+  }; //If Else color adder (is that even a word??)
+}); //Click event
 }); //Doc ready function
